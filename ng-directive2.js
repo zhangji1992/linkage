@@ -5,45 +5,6 @@
         scope: {
             res: '='
         },
-        // template: '<div class="wrap">' +
-        //     '<ul class="left" > ' +
-        //     '<li class="province-item" ng-repeat="data in dataList"> ' +
-        //     '<input type="checkbox" ng-model="data.sel" ng-click="provinceClick(data)"> ' +
-        //     '<span>{{data.name}}</span> ' +
-        //     '<a href="javascript:;" class="checkBtn" ng-click="reserveAttr(data,false)">{{data.showChildrens?"-":"+"}}</a> ' +
-        //     '<div class="city-item" ng-repeat="dataCity in data.cities" ng-hide="!data.showChildrens"> ' +
-        //     '<input type="checkbox" ng-model="dataCity.sel" ng-click="cityClick(dataCity,data)"> ' +
-        //     '<span>{{dataCity.name}}</span> ' +
-        //     '<a href="javascript:;"class="checkBtn" ng-click="reserveAttr(dataCity)">{{dataCity.showChildrens?"-":"+"}}</a> ' +
-        //     '<div class="county-item" ng-repeat="dataDistrict in dataCity.counties" ng-hide="!dataCity.showChildrens"> ' +
-        //     '<input type="checkbox" ng-model="dataDistrict.sel" ng-click="countyClick(dataDistrict,dataCity,data)"> ' +
-        //     '<span>{{dataDistrict.name}}</span> ' +
-        //     '</div> ' +
-        //     '</div> ' +
-        //     '</li> ' +
-        //     '</ul> ' +
-        //     '<div class="left">' +
-        //     '<div class="titleRight">' +
-        //     '<span>已选择</span>' +
-        //     '<a style=" float: right;" href="javascript:;" ng-click="delAll()" class="delChoice">完全删除</a> ' +
-        //     '</div>' +
-        //     '<ul class="choiceAll"> ' +
-        //     '<li class="province-item" ng-repeat="data in dataList"> ' +
-        //     '<span ng-if="data.sel">{{data.name}}</span> ' +
-        //     '<a href="javascript:;"class="checkBtn" ng-if="data.sel" ng-click="provinceDel(data)">X</a> ' +
-        //     '<div class="city-item" ng-repeat="dataCity in data.cities" "> ' +
-        //     '<span ng-if="dataCity.sel&&!data.sel">{{dataCity.name}}</span> ' +
-        //     '<a href="javascript:;"class="checkBtn" ng-if="dataCity.sel&&!data.sel" ng-click="cityDel(dataCity)">X</a> ' +
-        //     '<div class="county-item" ng-repeat="dataDistrict in dataCity.counties" "> ' +
-        //     '<span ng-if="dataDistrict.sel&&!dataCity.sel" >{{dataDistrict.name}}</span> ' +
-        //     '<a href="javascript:;"class="checkBtn" ng-if="dataDistrict.sel&&!dataCity.sel" ng-click="dataDistrictClick(dataDistrict)">X</a> ' +
-        //     '</div> ' +
-        //     '</div> ' +
-        //     '</li> ' +
-        //     '</ul>' +
-        //     '</div>' +
-        //     '</div>',
-
         template: '<div class="wrap">' +
         '<ul class="left" > ' +
         '<li class="province-item" ng-repeat="data in dataList track by $index"> ' +
@@ -53,7 +14,7 @@
         '<div class="city-item" ng-repeat="dataCity in cityCache[data.id]" ng-hide="!data.showChildrens"> ' +
         '<input type="checkbox" ng-model="dataCity.sel" ng-click="cityClick(dataCity,data)"> ' +
         '<span>{{dataCity.name}}</span> ' +
-        '<a href="javascript:;"class="checkBtn" ng-click="addCountry($parent.$index,$index);reserveAttr(dataCity)">{{dataCity.showChildrens?"-":"+"}}</a> ' +
+        '<a href="javascript:;" class="checkBtn" ng-click="addCountry($parent.$index,$index);reserveAttr(dataCity)">{{dataCity.showChildrens?"-":"+"}}</a> ' +
         '<div class="county-item" ng-repeat="dataDistrict in countryCache[dataCity.id]" ng-hide="!dataCity.showChildrens"> ' +
         '<input type="checkbox" ng-model="dataDistrict.sel" ng-click="countyClick(dataDistrict,dataCity,data)"> ' +
         '<span>{{dataDistrict.name}}</span> ' +
